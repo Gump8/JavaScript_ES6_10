@@ -1,1 +1,3 @@
-console.log(2)
+export default () => {
+  console.log('export default')
+}
