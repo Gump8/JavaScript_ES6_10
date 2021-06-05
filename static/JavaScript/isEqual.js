@@ -48,6 +48,7 @@ function isEqual (O1, O2) {
   if (_isArray(O1) && _isArray(O2)) {
     return _isEqualArr(O1, O2)
   }
+
   for (let key in O1) {
     if (!isEqual(O1[key], O2[key])) return false
   }
@@ -72,8 +73,8 @@ var obj2 = {
   d: ['a', 'b', 'd1']
 }
 
-var arr1 = ['aaa', 'bbb', { b: 'b' }, [1, 3, 4, 0, 7, 5, 6], { x: 'x', y: 'y' }]
-var arr2 = ['bbb', { b: 'b' }, 'aaa', { x: 'x', y: 'y' }, [0, 7, 1, 3, 4, 5, 6]]
+var arr1 = ['aaa', 'bbb', { b: 'b' }, [1, 3, 4, 0, 7, 5, 6, { a: 'a' }], { x: 'x', y: 'y' }]
+var arr2 = ['bbb', { b: 'b' }, 'aaa', { x: 'x', y: 'y' }, [0, 7, 1, 3, 4, 5, 6, { a: 'a' }]]
 
 // console.log('obj1, obj2', isEqual(obj1, obj2))
 console.log('arr1 arr2', isEqual(arr1, arr2))
