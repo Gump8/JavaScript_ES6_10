@@ -43,8 +43,8 @@ function isEqual (O1, O2) {
   if (O1 === O2) return true
 
   const [keys1, keys2] = [Object.keys(O1), Object.keys(O2)]
-
   if (keys1.length !== keys2.length) return false
+
   if (_isArray(O1) && _isArray(O2)) {
     return _isEqualArr(O1, O2)
   }
@@ -52,6 +52,7 @@ function isEqual (O1, O2) {
   for (let key in O1) {
     if (!isEqual(O1[key], O2[key])) return false
   }
+
   return true
 }
 
@@ -76,5 +77,9 @@ var obj2 = {
 var arr1 = ['aaa', 'bbb', { b: 'b' }, [1, 3, 4, 0, 7, 5, 6, { a: 'a' }], { x: 'x', y: 'y' }]
 var arr2 = ['bbb', { b: 'b' }, 'aaa', { x: 'x', y: 'y' }, [0, 7, 1, 3, 4, 5, 6, { a: 'a' }]]
 
+var obj3 = { 0: 'a', 1: 'b' }
+var arr3 = ['a', 'b']
+
 // console.log('obj1, obj2', isEqual(obj1, obj2))
 console.log('arr1 arr2', isEqual(arr1, arr2))
+console.log('obj3 arr3', isEqual(obj3, arr3))
