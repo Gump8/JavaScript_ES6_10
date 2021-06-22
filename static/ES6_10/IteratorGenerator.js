@@ -20,3 +20,14 @@ obj[Symbol.iterator] = function () {
 for (let value of obj) {
   console.log('value', value)
 }
+
+// 可迭代协议
+obj[Symbol.iterator] = function * () {
+  const values = ['v1', 'v2', 'v3']
+  // yield 返回 迭代器协议
+  yield * values
+}
+
+for (let value of obj) {
+  console.log('value', value)
+}

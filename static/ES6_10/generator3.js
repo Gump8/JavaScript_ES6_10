@@ -73,3 +73,18 @@ function * fibonacciSequence () {
     n1 = val
   }
 }
+
+/**
+ * 斐波那契 数列
+ */
+function fibonacciSequence () {
+  let [n0 = 0, n1 = 1] = [0, 1]
+  const sequence = [n0, n1]
+  while (true) {
+    let val = n0 + n1
+    sequence.push(val)
+    yield { val, sequence: [...sequence] }
+    n0 = n1
+    n1 = val
+  }
+}

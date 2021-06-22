@@ -1,1 +1,1 @@
-import './function-arrow'
+import './for_await_of'
